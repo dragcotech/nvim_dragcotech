@@ -8,6 +8,10 @@ vim.opt.autowrite = true
 vim.opt.cursorline = true
 vim.opt.autoread = true
 
+-- split
+vim.keymap.set('n', '<leader>sh', ':split<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>sv', ':vsplit<CR>', { noremap = true, silent = true })
+
 -- use spaces for tabs and whatnot
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
