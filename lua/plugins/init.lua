@@ -1,15 +1,17 @@
 require("lazy").setup({
+  -- theme
+  -- "dracula/vim",
+  "ellisonleao/gruvbox.nvim",
+  --
   "tpope/vim-commentary",
   "mattn/emmet-vim",
   "nvim-tree/nvim-tree.lua",
   "nvim-tree/nvim-web-devicons",
-  "ellisonleao/gruvbox.nvim",
-  "dracula/vim",
   "nvim-lualine/lualine.nvim",
-  "nvim-treesitter/nvim-treesitter",
+  -- "nvim-treesitter/nvim-treesitter",
   "vim-test/vim-test",
   "lewis6991/gitsigns.nvim",
-  -- "preservim/vimux",
+  "preservim/vimux",
   -- "christoomey/vim-tmux-navigator",
   "tpope/vim-fugitive",
   "tpope/vim-surround",
@@ -37,3 +39,4 @@ require("lazy").setup({
     dependencies = { "nvim-lua/plenary.nvim" }
   },
 })
+vim.cmd.colorscheme("gruvbox")

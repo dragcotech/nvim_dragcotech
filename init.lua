@@ -14,13 +14,10 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require "core"
-require("core.keymaps")
-require "plugins"
-
 -- config plugin
+require "plugins"
 require("plugins.configs.lualine")
-require("plugins.configs.treesitter")
+-- require("plugins.configs.treesitter")
 require("plugins.configs.telescope")
 require("plugins.configs.vim-test")
 require("plugins.configs.completions")
@@ -31,3 +28,7 @@ require("plugins.configs.oil")
 require("plugins.configs.markdown_preview")
 require("plugins.configs.swagger-preview")
 require("plugins.configs.nvimtree_config")
+
+-- config basic
+require "core"
+require("core.keymaps")
