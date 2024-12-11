@@ -19,3 +19,6 @@ vim.cmd [[ set termguicolors ]]
 
 --Line numbers
 vim.wo.number = true
+
+-- language setting
+vim.cmd("language en_US")

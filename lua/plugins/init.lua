@@ -1,7 +1,7 @@
 require("lazy").setup({
   -- theme
   "ellisonleao/gruvbox.nvim",
-  --
+  -- basic
   "tpope/vim-commentary",
   "mattn/emmet-vim",
   "nvim-tree/nvim-tree.lua",
@@ -22,6 +22,13 @@ require("lazy").setup({
   "williamboman/mason-lspconfig.nvim",
   "neovim/nvim-lspconfig",
   -- telescope
-  { "nvim-telescope/telescope.nvim", tag = "0.1.8" }
- })
+  "nvim-lua/plenary.nvim",
+  { 
+    "nvim-telescope/telescope.nvim",
+    tag = "0.1.8",
+    dependencies = { 'nvim-lua/plenary.nvim' }
+  }
+})
+
+-- default theme
 vim.cmd.colorscheme("gruvbox")
