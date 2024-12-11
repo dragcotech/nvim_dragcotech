@@ -19,7 +19,6 @@ require("core.keymaps")
 require "plugins"
 
 -- config plugin
-require("plugins.configs.colorscheme")
 require("plugins.configs.lualine")
 require("plugins.configs.treesitter")
 require("plugins.configs.telescope")
