@@ -17,17 +17,12 @@ vim.opt.rtp:prepend(lazypath)
 -- config plugin
 require "plugins"
 require("plugins.configs.lualine")
--- require("plugins.configs.treesitter")
-require("plugins.configs.telescope")
-require("plugins.configs.vim-test")
 require("plugins.configs.completions")
 require("plugins.configs.mason")
-require("plugins.configs.lsp_config")
+require("plugins.configs.lsp")
 require("plugins.configs.gitsigns")
 require("plugins.configs.oil")
-require("plugins.configs.markdown_preview")
-require("plugins.configs.swagger-preview")
-require("plugins.configs.nvimtree_config")
+require("plugins.configs.nvimtree")
 
 -- config basic
 require "core"

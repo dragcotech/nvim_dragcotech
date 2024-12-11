@@ -1,6 +1,5 @@
 require("lazy").setup({
   -- theme
-  -- "dracula/vim",
   "ellisonleao/gruvbox.nvim",
   --
   "tpope/vim-commentary",
@@ -8,11 +7,8 @@ require("lazy").setup({
   "nvim-tree/nvim-tree.lua",
   "nvim-tree/nvim-web-devicons",
   "nvim-lualine/lualine.nvim",
-  -- "nvim-treesitter/nvim-treesitter",
   "vim-test/vim-test",
   "lewis6991/gitsigns.nvim",
-  "preservim/vimux",
-  -- "christoomey/vim-tmux-navigator",
   "tpope/vim-fugitive",
   "tpope/vim-surround",
   "stevearc/oil.nvim",
@@ -25,18 +21,7 @@ require("lazy").setup({
   "williamboman/mason.nvim",
   "williamboman/mason-lspconfig.nvim",
   "neovim/nvim-lspconfig",
-  {
-    "vinnymeller/swagger-preview.nvim",
-    run = "npm install -g swagger-ui-watcher",
-  },
-  {
-    "iamcco/markdown-preview.nvim",
-    run = "cd app && npm install",
-  },
-  {
-    "nvim-telescope/telescope.nvim",
-    tag = "0.1.4",
-    dependencies = { "nvim-lua/plenary.nvim" }
-  },
-})
+  -- telescope
+  { "nvim-telescope/telescope.nvim", tag = "0.1.8" }
+ })
 vim.cmd.colorscheme("gruvbox")
