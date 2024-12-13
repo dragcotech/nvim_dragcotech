@@ -12,6 +12,8 @@ lsp_defaults.capabilities = vim.tbl_deep_extend(
     require('cmp_nvim_lsp').default_capabilities()
 )
 
+
+require('lspconfig').svelte.setup({})
 require("lspconfig").lua_ls.setup {
     settings = {
         Lua = {
@@ -27,7 +29,6 @@ require("lspconfig").lua_ls.setup {
         },
     }
 }
-
 require("lspconfig").gopls.setup({})
 require("lspconfig").tailwindcss.setup({})
 
