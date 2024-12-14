@@ -13,11 +13,11 @@ require('nvim-treesitter.configs').setup({
 		"rust",
 	},
 	highlight = {
-		enable = true,                       -- Bật tính năng highlight của Treesitter
-		additional_vim_regex_highlighting = false, -- Tắt highlight mặc định của Vim
+		enable = true,
+		additional_vim_regex_highlighting = false,
 	},
 	indent = {
-		enable = true, -- Bật tính năng thụt lề theo Treesitter
+		enable = true,
 	},
 	incremental_selection = {
 		enable = true,
