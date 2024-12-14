@@ -17,6 +17,15 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   -- Basic
+  -- Tree
+  {
+    "nvim-tree/nvim-tree.lua",
+    version = "*",
+    lazy = false,
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
+  },
   -- Git related plugins
   'tpope/vim-fugitive',
   'lewis6991/gitsigns.nvim',
