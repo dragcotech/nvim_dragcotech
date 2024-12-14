@@ -39,27 +39,22 @@ require("lazy").setup({
   },
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   -- Treesitter
-  {
-    'nvim-treesitter/nvim-treesitter',
-    build = function()
-      pcall(require('nvim-treesitter.install').update { with_sync = true })
-    end,
-    dependencies = {
-      'nvim-treesitter/nvim-treesitter-textobjects',
-    }
-  },
-  -- LSP Configuration & Plugins
-  {
-    'neovim/nvim-lspconfig',
-    dependencies = {
-      -- Automatically install LSPs to stdpath for neovim
-      'williamboman/mason.nvim',
-      'williamboman/mason-lspconfig.nvim',
+  -- {
+  --   'nvim-treesitter/nvim-treesitter',
+  --   build = ":TSUpdate",
+  -- },
+  -- -- LSP Configuration & Plugins
+  -- {
+  --   'neovim/nvim-lspconfig',
+  --   dependencies = {
+  --     -- Automatically install LSPs to stdpath for neovim
+  --     'williamboman/mason.nvim',
+  --     'williamboman/mason-lspconfig.nvim',
 
-      -- Useful status updates for LSP
-      'j-hui/fidget.nvim',
-    }
-  },
+  --     -- Useful status updates for LSP
+  --     'j-hui/fidget.nvim',
+  --   }
+  -- },
   -- Autocompletion
   {
     'hrsh7th/nvim-cmp',
@@ -135,6 +130,7 @@ require("lazy").setup({
   },
   'nvim-telescope/telescope-symbols.nvim',
   -- Theme
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   "ellisonleao/gruvbox.nvim",
   -- {
   --   'folke/tokyonight.nvim',
@@ -145,4 +141,4 @@ require("lazy").setup({
 })
 
 -- default theme
-vim.cmd.colorscheme("gruvbox")
+vim.cmd.colorscheme "catppuccin"

@@ -1,11 +1,9 @@
 require("mason-lspconfig").setup({
-    ensure_installed = { "lua_ls", "ts_ls", "rust_analyzer", "svelte", "html", "cssls", "tailwindcss"}
+    ensure_installed = { "lua_ls", "ts_ls", "rust_analyzer", "svelte", "html", "cssls", "tailwindcss" }
 })
 
 local lspconfig = require('lspconfig')
-
 local lsp_defaults = lspconfig.util.default_config
-
 lsp_defaults.capabilities = vim.tbl_deep_extend(
     'force',
     lsp_defaults.capabilities,
@@ -30,7 +28,10 @@ require("lspconfig").lua_ls.setup {
     }
 }
 require("lspconfig").gopls.setup({})
-require("lspconfig").tailwindcss.setup({})
+require("lspconfig").tailwindcss.setup({
+    filetypes = { "html", "css", "javascriptreact", "typescriptreact", "svelte" },
+})
+require("fidget").setup()
 
 vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('UserLspConfig', {}),
