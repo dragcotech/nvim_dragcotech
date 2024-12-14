@@ -16,7 +16,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    -- Basic
+    -- BufferLine
+    { 'akinsho/bufferline.nvim',             version = "*", dependencies = 'nvim-tree/nvim-web-devicons' },
     -- Tree
     {
         "nvim-tree/nvim-tree.lua",
@@ -31,7 +32,7 @@ require("lazy").setup({
     'lewis6991/gitsigns.nvim',
     -- Lualine
     'nvim-lualine/lualine.nvim', -- Fancier statusline
-    { "lukas-reineke/indent-blankline.nvim", main = "ibl",        opts = {},      enabled = false },
+    { "lukas-reineke/indent-blankline.nvim", main = "ibl",  opts = {},                                   enabled = false },
     {
         'numToStr/Comment.nvim', -- "gc" to comment visual regions/lines
         event = { "BufRead", "BufNewFile" },
@@ -121,7 +122,7 @@ require("lazy").setup({
     },
     'nvim-telescope/telescope-symbols.nvim',
     -- Theme
-    { "catppuccin/nvim",                     name = "catppuccin", priority = 1000 },
+    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
     "ellisonleao/gruvbox.nvim",
     -- {
     --   'folke/tokyonight.nvim',

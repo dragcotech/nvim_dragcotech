@@ -1,3 +1,6 @@
+# Bufferline
+-   
+
 # Move Autosuggest
 -   <C-n> : move down
 -   <C-p> : move up
