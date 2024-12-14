@@ -39,10 +39,10 @@ require("lazy").setup({
   },
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   -- Treesitter
-  -- {
-  --   'nvim-treesitter/nvim-treesitter',
-  --   build = ":TSUpdate",
-  -- },
+  {
+    'nvim-treesitter/nvim-treesitter',
+    build = ":TSUpdate",
+  },
   -- LSP Configuration & Plugins
   {
     'neovim/nvim-lspconfig',

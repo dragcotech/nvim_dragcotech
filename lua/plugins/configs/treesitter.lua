@@ -1,8 +1,12 @@
-require 'nvim-treesitter.install'.prefer_git = false
+if vim.loop.os_uname().sysname == "Windows_NT" then
+	require('nvim-treesitter.install').compilers = { "clang" }
+end
 
 require('nvim-treesitter.configs').setup({
 	ensure_installed = {
 		"lua",
+		"html",
+		"css",
 		"javascript",
 		"typescript",
 		"svelte",

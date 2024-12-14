@@ -4,7 +4,7 @@ require("core.keymaps")
 
 -- config plugin
 require "plugins"
--- require("plugins.configs.treesitter")
+require("plugins.configs.treesitter")
 require("plugins.configs.lualine")
 require("plugins.configs.completions")
 require("plugins.configs.mason")
