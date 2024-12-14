@@ -43,18 +43,18 @@ require("lazy").setup({
   --   'nvim-treesitter/nvim-treesitter',
   --   build = ":TSUpdate",
   -- },
-  -- -- LSP Configuration & Plugins
-  -- {
-  --   'neovim/nvim-lspconfig',
-  --   dependencies = {
-  --     -- Automatically install LSPs to stdpath for neovim
-  --     'williamboman/mason.nvim',
-  --     'williamboman/mason-lspconfig.nvim',
+  -- LSP Configuration & Plugins
+  {
+    'neovim/nvim-lspconfig',
+    dependencies = {
+      -- Automatically install LSPs to stdpath for neovim
+      'williamboman/mason.nvim',
+      'williamboman/mason-lspconfig.nvim',
 
-  --     -- Useful status updates for LSP
-  --     'j-hui/fidget.nvim',
-  --   }
-  -- },
+      -- Useful status updates for LSP
+      'j-hui/fidget.nvim',
+    }
+  },
   -- Autocompletion
   {
     'hrsh7th/nvim-cmp',
@@ -141,4 +141,4 @@ require("lazy").setup({
 })
 
 -- default theme
-vim.cmd.colorscheme "catppuccin"
+vim.cmd.colorscheme "gruvbox"
