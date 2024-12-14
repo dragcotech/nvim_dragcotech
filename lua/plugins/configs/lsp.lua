@@ -11,6 +11,10 @@ lsp_defaults.capabilities = vim.tbl_deep_extend(
     require('cmp_nvim_lsp').default_capabilities()
 )
 
+require('lspconfig').ts_ls.setup({})
+require('lspconfig').cssls.setup({})
+require('lspconfig').html.setup({})
+require('lspconfig').rust_analyzer.setup({})
 require('lspconfig').svelte.setup({})
 require("lspconfig").lua_ls.setup {
     settings = {
@@ -25,16 +29,22 @@ require("lspconfig").lua_ls.setup {
                 },
             },
         },
-    }
+    },
 }
 require("lspconfig").tailwindcss.setup({
     filetypes = { "html", "css", "javascriptreact", "typescriptreact", "svelte" },
+
 })
-require("fidget").setup()
+require("fidget").setup({})
 
 vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('UserLspConfig', {}),
     callback = function(ev)
+        -- Set indentation to 4 spaces for the current buffer
+        vim.bo[ev.buf].tabstop = 4
+        vim.bo[ev.buf].shiftwidth = 4
+        vim.bo[ev.buf].expandtab = true -- Use spaces instead of tabs
+
         -- Enable completion triggered by <c-x><c-o>
         vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
 
@@ -61,6 +71,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
         -- Format Code
         if ev.data and vim.lsp.get_client_by_id(ev.data.client_id).server_capabilities.documentFormattingProvider then
             vim.api.nvim_create_autocmd("BufWritePre", {
+                group = vim.api.nvim_create_augroup('AutoFormatOnSave', { clear = false }),
                 buffer = ev.buf,
                 callback = function()
                     vim.lsp.buf.format({ async = false })

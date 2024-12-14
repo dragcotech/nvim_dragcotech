@@ -4,9 +4,9 @@ if not status then return end
 local builtin = require('telescope.builtin')
 
 telescope.setup({
-  defaults = {
-    file_ignore_patterns = {"%.git/*", "%.doc/*"}
-  }
+    defaults = {
+        file_ignore_patterns = { "%.git/*", "%.doc/*" }
+    }
 })
 
 vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
