@@ -17,7 +17,6 @@ require('nvim-treesitter.configs').setup({
 		additional_vim_regex_highlighting = false,
 	},
 	indent = {
-		enable = false,
-		disable = { "lua", "html", "css", "javascript", "typescript", "svelte", "rust" }, -- Disable for specific languages
+		enable = true,
 	},
 })
