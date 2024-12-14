@@ -1,5 +1,6 @@
 require("mason-lspconfig").setup({
-    ensure_installed = { "lua_ls", "ts_ls", "rust_analyzer", "svelte", "html", "cssls", "tailwindcss" }
+    ensure_installed = { "lua_ls", "ts_ls", "rust_analyzer", "svelte", "html", "cssls", "tailwindcss" },
+    automatic_installation = true,
 })
 
 local lspconfig = require('lspconfig')
@@ -9,7 +10,6 @@ lsp_defaults.capabilities = vim.tbl_deep_extend(
     lsp_defaults.capabilities,
     require('cmp_nvim_lsp').default_capabilities()
 )
-
 
 require('lspconfig').svelte.setup({})
 require("lspconfig").lua_ls.setup {
@@ -58,5 +58,15 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.keymap.set('n', '<space>f', function()
             vim.lsp.buf.format { async = true }
         end, opts)
+
+        -- Format Code 
+        if ev.data and vim.lsp.get_client_by_id(ev.data.client_id).server_capabilities.documentFormattingProvider then
+            vim.api.nvim_create_autocmd("BufWritePre", {
+                buffer = ev.buf,
+                callback = function()
+                    vim.lsp.buf.format({ async = false })
+                end,
+            })
+        end
     end,
 })

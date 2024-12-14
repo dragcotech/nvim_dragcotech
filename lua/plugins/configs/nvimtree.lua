@@ -14,8 +14,7 @@ require("nvim-tree").setup({
     },
 })
 
-vim.keymap.set('n', '<c-n>', ':NvimTreeFindFile<CR>')
-vim.keymap.set('n', '<c-t>', ':NvimTreeClose<CR>')
+vim.keymap.set('n', '<leader>e', ':NvimTreeFindFile<CR>')
 
 -- vim.keymap.set('n', '<c-n>', ':NvimTreeFindFile<CR>')
 -- vim.keymap.set('n', '<c-t>', ':NvimTreeClose<CR>')
