@@ -1,3 +1,7 @@
+# Move Autosuggest
+-   <C-n> : move down
+-   <C-p> : move up
+
 # Split
 -   <leader>sh : split horizontal
 -   <leader>sv : split vertical
