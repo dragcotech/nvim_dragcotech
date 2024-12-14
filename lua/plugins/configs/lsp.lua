@@ -27,7 +27,6 @@ require("lspconfig").lua_ls.setup {
         },
     }
 }
-require("lspconfig").gopls.setup({})
 require("lspconfig").tailwindcss.setup({
     filetypes = { "html", "css", "javascriptreact", "typescriptreact", "svelte" },
 })
@@ -59,7 +58,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
             vim.lsp.buf.format { async = true }
         end, opts)
 
-        -- Format Code 
+        -- Format Code
         if ev.data and vim.lsp.get_client_by_id(ev.data.client_id).server_capabilities.documentFormattingProvider then
             vim.api.nvim_create_autocmd("BufWritePre", {
                 buffer = ev.buf,
