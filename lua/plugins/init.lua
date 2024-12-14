@@ -16,42 +16,122 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  -- treesitter
-  -- { 'nvim-treesitter/nvim-treesitter' },
-  -- basic
-  "tpope/vim-commentary",
-  "mattn/emmet-vim",
-  "nvim-tree/nvim-tree.lua",
-  "nvim-tree/nvim-web-devicons",
-  "nvim-lualine/lualine.nvim",
-  "vim-test/vim-test",
-  "lewis6991/gitsigns.nvim",
-  "tpope/vim-fugitive",
-  "tpope/vim-surround",
-  "stevearc/oil.nvim",
-  -- completion
-  "hrsh7th/nvim-cmp",
-  "hrsh7th/cmp-nvim-lsp",
-  "L3MON4D3/LuaSnip",
-  "saadparwaiz1/cmp_luasnip",
-  "rafamadriz/friendly-snippets",
-  "williamboman/mason.nvim",
-  "williamboman/mason-lspconfig.nvim",
-  "neovim/nvim-lspconfig",
-  -- telescope
-  "nvim-lua/plenary.nvim",
+  -- Basic
+  -- Git related plugins
+  'tpope/vim-fugitive',
+  'lewis6991/gitsigns.nvim',
+
+  'nvim-lualine/lualine.nvim', -- Fancier statusline
+  { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+  {
+    'numToStr/Comment.nvim', -- "gc" to comment visual regions/lines
+    event = { "BufRead", "BufNewFile" },
+    config = true
+  },
+  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+  -- Treesitter
+  {
+    'nvim-treesitter/nvim-treesitter',
+    build = function()
+      pcall(require('nvim-treesitter.install').update { with_sync = true })
+    end,
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter-textobjects',
+    }
+  },
+  -- LSP Configuration & Plugins
+  {
+    'neovim/nvim-lspconfig',
+    dependencies = {
+      -- Automatically install LSPs to stdpath for neovim
+      'williamboman/mason.nvim',
+      'williamboman/mason-lspconfig.nvim',
+
+      -- Useful status updates for LSP
+      'j-hui/fidget.nvim',
+    }
+  },
+  -- Autocompletion
+  {
+    'hrsh7th/nvim-cmp',
+    event = "InsertEnter",
+    dependencies = {
+      'hrsh7th/cmp-nvim-lsp',
+      'L3MON4D3/LuaSnip',
+      'saadparwaiz1/cmp_luasnip'
+    },
+    config = function()
+      -- nvim-cmp setup
+      local cmp = require 'cmp'
+      local luasnip = require 'luasnip'
+
+      cmp.setup({
+        view = {
+          entries = "native"
+        },
+        snippet = {
+          expand = function(args)
+            luasnip.lsp_expand(args.body)
+          end,
+        },
+        mapping = cmp.mapping.preset.insert {
+          ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+          ['<C-f>'] = cmp.mapping.scroll_docs(4),
+          ['<C-Space>'] = cmp.mapping.complete(),
+          ['<CR>'] = cmp.mapping.confirm {
+            behavior = cmp.ConfirmBehavior.Replace,
+            select = true,
+          },
+          ['<Tab>'] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+              cmp.select_next_item()
+            elseif luasnip.expand_or_jumpable() then
+              luasnip.expand_or_jump()
+            else
+              fallback()
+            end
+          end, { 'i', 's' }),
+          ['<S-Tab>'] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+              cmp.select_prev_item()
+            elseif luasnip.jumpable(-1) then
+              luasnip.jump(-1)
+            else
+              fallback()
+            end
+          end, { 'i', 's' }),
+        },
+        sources = {
+          { name = 'nvim_lsp' },
+          { name = 'luasnip' },
+          { name = "neorg" },
+        },
+      })
+    end
+  },
+  -- Lualine
+  'nvim-lualine/lualine.nvim', -- Fancier statusline
+  { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+  {
+    'numToStr/Comment.nvim', -- "gc" to comment visual regions/lines
+    event = { "BufRead", "BufNewFile" },
+    config = true
+  },
+  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+  -- Telescope
   {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.8",
     dependencies = { 'nvim-lua/plenary.nvim' }
   },
-  -- theme
+  'nvim-telescope/telescope-symbols.nvim',
+  -- Theme
   "ellisonleao/gruvbox.nvim",
-  {
-    'folke/tokyonight.nvim',
-    lazy = false,
-    priority = 1000,
-  },
+  -- {
+  --   'folke/tokyonight.nvim',
+  --   lazy = false,
+  --   priority = 1000,
+  -- },
   --{ 'projekt0n/github-nvim-theme', name = 'github-theme' },
 })
 
