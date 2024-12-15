@@ -16,6 +16,12 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+    -- Terminal
+    {
+        'akinsho/toggleterm.nvim',
+        version = "*",
+        config = true
+    },
     -- BufferLine
     {
         'akinsho/bufferline.nvim',
