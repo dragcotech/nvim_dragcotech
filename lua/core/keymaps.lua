@@ -8,3 +8,17 @@ vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
 -- split
 vim.keymap.set('n', '<leader>sh', ':split<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>sv', ':vsplit<CR>', { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap(
+    'n',
+    '<leader>fm',
+    ':!prettier --write %<CR>',
+    { noremap = true, silent = true }
+)
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+    pattern = "*.js",
+    callback = function()
+        vim.cmd("silent! !prettier --write " .. vim.fn.expand("%"))
+    end,
+})

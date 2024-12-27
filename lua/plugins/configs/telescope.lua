@@ -5,7 +5,7 @@ local builtin = require('telescope.builtin')
 
 telescope.setup({
     defaults = {
-        file_ignore_patterns = { "%.git/*", "%.doc/*" }
+        file_ignore_patterns = { "%.git/*", "%.doc/*", "%target/*", "%.sqlx/*", "%.svelte%-kit/*", "%node_modules/*" }
     }
 })
 
