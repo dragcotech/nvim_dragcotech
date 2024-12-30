@@ -9,6 +9,11 @@ vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
 vim.keymap.set('n', '<leader>sh', ':split<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>sv', ':vsplit<CR>', { noremap = true, silent = true })
 
+-- copy, pass from clipboard
+vim.keymap.set('n', '<leader>p', '"+p', { noremap = true, silent = true })
+vim.keymap.set('v', '<leader>y', '"+y', { noremap = true, silent = true })
+
+-- prettier, formatter code .min.js
 vim.api.nvim_set_keymap(
     'n',
     '<leader>fm',

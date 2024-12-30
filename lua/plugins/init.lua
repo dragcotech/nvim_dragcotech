@@ -14,8 +14,16 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
     end
 end
 vim.opt.rtp:prepend(lazypath)
-
+-- Lazy Setup
 require("lazy").setup({
+    -- Markdown
+    -- Manual Installation -> :call mkdp#util#install()
+    {
+        "iamcco/markdown-preview.nvim",
+        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+        ft = { "markdown" },
+        build = function() vim.fn["mkdp#util#install"]() end,
+    },
     -- Terminal
     {
         'akinsho/toggleterm.nvim',
@@ -104,6 +112,5 @@ require("lazy").setup({
     -- },
     --{ 'projekt0n/github-nvim-theme', name = 'github-theme' },
 })
-
 -- default theme
 vim.cmd.colorscheme "gruvbox"
