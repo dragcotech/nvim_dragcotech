@@ -6,7 +6,7 @@
 
 # Command
 - :MarkdownPreview
-- :ToggleTerm 1 size=50 direction=vertical
+- :ToggleTerm 1 size=60 direction=vertical
 
 # Keyboard Shortcuts
 

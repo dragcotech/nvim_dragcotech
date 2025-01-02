@@ -4,6 +4,7 @@ require("core.keymaps")
 
 -- config plugin
 require "plugins"
+require("plugins.configs.gruvbox")
 require("plugins.configs.alpha")
 require("plugins.configs.treesitter")
 require("plugins.configs.lualine")
