@@ -6,10 +6,45 @@
 
 # Command
 - :MarkdownPreview
+- :ToggleTerm 1 size=50 direction=vertical
 
 # Keyboard Shortcuts
+
 ## Clipboard
 | Keyboard    | Description |
 | ----------- | ----------- |
-| Header      | Title       |
-| Paragraph   | Text        |
+| space + y   | copy        |
+| space + p   | paste       |
+
+## Split
+| Keyboard    | Description |
+| ----------- | ----------- |
+| space + sh  | horizontal  |
+| space + sv  | vertical    |
+
+## Bufferline
+| Keyboard    | Description |
+| ----------- | ----------- |
+| tab         | next        |
+| shift + tab | previous    |
+| space + bd  | close ht    |
+| space + bc  | pick close  |
+| space + bb  | pick choose |
+
+## Tree
+| Keyboard    | Description |
+| ----------- | ----------- |
+| space + e   | open        |
+| q           | close       |
+| a           | new file    |
+
+## Telescope
+| Keyboard    | Description |
+| ----------- | ----------- |
+| space + ff  | open        |
+
+## Terminal
+| Keyboard    | Description |
+| ----------- | ----------- |
+| ctrl + t    | toggle      |
+
