@@ -16,6 +16,12 @@ end
 vim.opt.rtp:prepend(lazypath)
 -- Lazy Setup
 require("lazy").setup({
+    -- Alpha Welcome
+    {
+        "goolord/alpha-nvim",
+        -- dependencies = { 'echasnovski/mini.icons' },
+        dependencies = { 'nvim-tree/nvim-web-devicons' },
+    },
     -- Markdown
     -- Manual Installation -> :call mkdp#util#install()
     {
