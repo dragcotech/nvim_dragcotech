@@ -48,3 +48,8 @@
 | ----------- | ----------- |
 | ctrl + t    | toggle      |
 
+## LSP
+| Keyboard    | Description |
+| ----------- | ----------- |
+| space + ca    | show choose     |
+| \ca or ,ca    | show choose     |
