@@ -28,11 +28,12 @@ require("lazy").setup({
     require("plugins.configs.telescope"),
     require("plugins.configs.terminal"),
     require("plugins.configs.treesitter"),
-    require("plugins.themes.gruvbox")
+    -- require("plugins.themes.gruvbox"),
+    require("plugins.themes.darkvoid")
 })
 
 -- default theme
-vim.cmd.colorscheme "gruvbox"
-vim.opt.background = "dark"
-vim.cmd("highlight Normal guibg=none")
-vim.cmd("highlight NormalNC guibg=none")
+vim.cmd.colorscheme "darkvoid"
+-- vim.opt.background = "dark"
+-- vim.cmd("highlight Normal guibg=none")
+-- vim.cmd("highlight NormalNC guibg=none")
