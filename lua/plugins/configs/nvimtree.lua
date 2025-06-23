@@ -1,17 +1,28 @@
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+return {
+    "nvim-tree/nvim-tree.lua",
+    version = "*",
+    lazy = false,
+    dependencies = {
+        "nvim-tree/nvim-web-devicons",
+    },
 
-require("nvim-tree").setup({
-    sort_by = "case_sensitive",
-    view = {
-        width = 30,
-    },
-    renderer = {
-        group_empty = true,
-    },
-    filters = {
-        dotfiles = false,
-    },
-})
+    config = function()
+        vim.g.loaded_netrw = 1
+        vim.g.loaded_netrwPlugin = 1
 
-vim.keymap.set('n', '<leader>e', ':NvimTreeFindFile<CR>')
+        require("nvim-tree").setup({
+            sort_by = "case_sensitive",
+            view = {
+                width = 30,
+            },
+            renderer = {
+                group_empty = true,
+            },
+            filters = {
+                dotfiles = false,
+            },
+        })
+
+        vim.keymap.set('n', '<leader>e', ':NvimTreeFindFile<CR>')
+    end
+}
