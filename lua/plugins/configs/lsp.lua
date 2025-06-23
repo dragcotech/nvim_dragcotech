@@ -12,7 +12,7 @@ return {
         require("mason").setup()
 
         require("mason-lspconfig").setup({
-            ensure_installed = { "lua_ls", "tsserver", "rust_analyzer", "svelte", "html", "cssls", "tailwindcss" },
+            ensure_installed = { "lua_ls", "ts_ls", "rust_analyzer", "svelte", "html", "cssls", "tailwindcss" },
             automatic_installation = true,
         })
 
