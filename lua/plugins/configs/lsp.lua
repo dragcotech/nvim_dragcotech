@@ -24,7 +24,7 @@ return {
             require('cmp_nvim_lsp').default_capabilities()
         )
 
-        lspconfig.tsserver.setup({})
+        lspconfig.ts_ls.setup({})
         lspconfig.cssls.setup({})
         lspconfig.html.setup({})
         lspconfig.rust_analyzer.setup({})
