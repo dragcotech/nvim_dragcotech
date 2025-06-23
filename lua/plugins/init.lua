@@ -25,7 +25,6 @@ require("lazy").setup({
     require("plugins.configs.lsp"),
     require("plugins.configs.lualine"),
     require("plugins.configs.nvimtree"),
-    -- require("plugins.configs.rust"),
     require("plugins.configs.telescope"),
     require("plugins.configs.terminal"),
     require("plugins.configs.treesitter"),
