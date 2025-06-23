@@ -29,11 +29,12 @@ require("lazy").setup({
     require("plugins.configs.terminal"),
     require("plugins.configs.treesitter"),
     -- require("plugins.themes.gruvbox"),
-    require("plugins.themes.darkvoid")
+    -- require("plugins.themes.darkvoid"),
+    require("plugins.themes.nordic")
 })
 
 -- default theme
-vim.cmd.colorscheme "darkvoid"
+vim.cmd.colorscheme "nordic"
 -- vim.opt.background = "dark"
 -- vim.cmd("highlight Normal guibg=none")
 -- vim.cmd("highlight NormalNC guibg=none")
