@@ -28,6 +28,7 @@ require("lazy").setup({
     require("plugins.configs.telescope"),
     require("plugins.configs.terminal"),
     require("plugins.configs.treesitter"),
+    require("plugins.configs.comment"),
     -- require("plugins.themes.gruvbox"),
     -- require("plugins.themes.darkvoid"),
     require("plugins.themes.nordic")
