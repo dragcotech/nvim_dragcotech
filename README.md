@@ -7,6 +7,7 @@
 # Command
 - :MarkdownPreview
 - :ToggleTerm 1 size=60 direction=vertical
+- :lua vim.diagnostic.setloclist() #check all diagnostic in project
 
 # Keyboard Shortcuts
 

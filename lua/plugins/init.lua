@@ -29,6 +29,8 @@ require("lazy").setup({
     require("plugins.configs.terminal"),
     require("plugins.configs.treesitter"),
     require("plugins.configs.comment"),
+    -- require("plugins.configs.rust_tools"),
+    -- require("plugins.configs.lsp_saga"),
     -- require("plugins.themes.gruvbox"),
     -- require("plugins.themes.darkvoid"),
     require("plugins.themes.nordic")

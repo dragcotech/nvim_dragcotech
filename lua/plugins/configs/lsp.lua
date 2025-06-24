@@ -87,5 +87,8 @@ return {
                 end
             end,
         })
+
+        vim.o.updatetime = 250
+        vim.cmd [[autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })]]
     end,
 }
