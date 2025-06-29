@@ -19,6 +19,9 @@ vim.keymap.set('n', '<leader>bd', ':bdelete<CR>', { silent = true })
 vim.keymap.set('n', '<leader>bc', ':BufferLinePickClose<CR>', { silent = true })
 vim.keymap.set('n', '<leader>bb', ':BufferLinePick<CR>', { silent = true })
 
+-- open folder tree
+vim.keymap.set('n', '<leader>e', ':NvimTreeFindFile<CR>')
+
 -- prettier, formatter code .min.js
 vim.api.nvim_set_keymap(
     'n',

@@ -22,7 +22,5 @@ return {
                 dotfiles = false,
             },
         })
-
-        vim.keymap.set('n', '<leader>e', ':NvimTreeFindFile<CR>')
     end
 }
