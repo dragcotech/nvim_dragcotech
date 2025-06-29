@@ -31,7 +31,7 @@ require("lazy").setup({
     require("plugins.configs.comment"),
     -- require("plugins.configs.rust_tools"),
     -- require("plugins.configs.lsp_saga"),
-    -- require("plugins.themes.gruvbox"),
+    require("plugins.themes.gruvbox"),
     -- require("plugins.themes.darkvoid"),
     require("plugins.themes.nordic"),
     require("plugins.themes.everforest")

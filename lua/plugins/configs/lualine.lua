@@ -1,12 +1,7 @@
 return {
     'nvim-lualine/lualine.nvim', -- Fancier statusline
-    {
-        "lukas-reineke/indent-blankline.nvim",
-        main = "ibl",
-        opts = {},
-        enabled = false
-    },
-    'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    'tpope/vim-sleuth',          -- Detect tabstop and shiftwidth automatically
 
     config = function()
         require('lualine').setup {
