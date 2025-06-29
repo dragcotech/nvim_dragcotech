@@ -76,6 +76,7 @@ return {
                     vim.lsp.buf.format { async = true }
                 end, opts)
 
+                -- auto format
                 if ev.data and vim.lsp.get_client_by_id(ev.data.client_id).server_capabilities.documentFormattingProvider then
                     vim.api.nvim_create_autocmd("BufWritePre", {
                         group = vim.api.nvim_create_augroup('AutoFormatOnSave', { clear = false }),
@@ -88,6 +89,7 @@ return {
             end,
         })
 
+        -- display diagnostics at point
         vim.o.updatetime = 250
         vim.cmd [[autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })]]
     end,
