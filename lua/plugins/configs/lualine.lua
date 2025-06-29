@@ -6,11 +6,6 @@ return {
         opts = {},
         enabled = false
     },
-    {
-        'numToStr/Comment.nvim', -- "gc" to comment visual regions/lines
-        event = { "BufRead", "BufNewFile" },
-        config = true
-    },
     'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
     config = function()
