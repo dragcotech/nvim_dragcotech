@@ -4,13 +4,20 @@ vim.keymap.set('n', '<c-j>', ':wincmd j<CR>')
 vim.keymap.set('n', '<c-h>', ':wincmd h<CR>')
 vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
 
+-- copy, pass from clipboard
+vim.keymap.set('n', '<leader>p', '"+p', { noremap = true, silent = true })
+vim.keymap.set('v', '<leader>y', '"+y', { noremap = true, silent = true })
+
 -- split
 vim.keymap.set('n', '<leader>sh', ':split<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>sv', ':vsplit<CR>', { noremap = true, silent = true })
 
--- copy, pass from clipboard
-vim.keymap.set('n', '<leader>p', '"+p', { noremap = true, silent = true })
-vim.keymap.set('v', '<leader>y', '"+y', { noremap = true, silent = true })
+-- bufferline
+vim.keymap.set('n', '<Tab>', ':BufferLineCycleNext<CR>', { silent = true })
+vim.keymap.set('n', '<S-Tab>', ':BufferLineCyclePrev<CR>', { silent = true })
+vim.keymap.set('n', '<leader>bd', ':bdelete<CR>', { silent = true })
+vim.keymap.set('n', '<leader>bc', ':BufferLinePickClose<CR>', { silent = true })
+vim.keymap.set('n', '<leader>bb', ':BufferLinePick<CR>', { silent = true })
 
 -- prettier, formatter code .min.js
 vim.api.nvim_set_keymap(
