@@ -79,17 +79,13 @@ return {
                 -- auto format
                 if ev.data and vim.lsp.get_client_by_id(ev.data.client_id).server_capabilities.documentFormattingProvider then
                     vim.api.nvim_create_autocmd("BufWritePre", {
-                        group = vim.api.nvim_create_augroup("AutoFormatOnSave", { clear = false }),
-                        pattern = "*.html",
+                        group = vim.api.nvim_create_augroup('AutoFormatOnSave', { clear = false }),
+                        buffer = ev.buf,
                         callback = function()
-                            local buf_contents = table.concat(vim.api.nvim_buf_get_lines(0, 0, -1, false), "\n")
-
-                            -- Check Pre,Code Tags
-                            if buf_contents:find("<pre") or buf_contents:find("<code") then
-                                -- No Format
+                            local filetype = vim.bo[ev.buf].filetype
+                            if filetype == "html" then
                                 return
                             end
-
                             -- If it have <pre>/<code>, format code
                             vim.lsp.buf.format({ async = false })
                         end,
