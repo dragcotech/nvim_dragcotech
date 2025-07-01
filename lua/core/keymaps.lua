@@ -22,6 +22,9 @@ vim.keymap.set('n', '<leader>bb', ':BufferLinePick<CR>', { silent = true })
 -- open folder tree
 vim.keymap.set('n', '<leader>e', ':NvimTreeFindFile<CR>')
 
+-- multiple replace
+vim.keymap.set('n', '<leader>mr', ':MurenToggle<CR>')
+
 -- prettier, formatter code .min.js
 vim.api.nvim_set_keymap(
     'n',
