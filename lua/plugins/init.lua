@@ -32,8 +32,9 @@ require("lazy").setup({
     require("lua.plugins.configs.multiple_search"),
     -- require("plugins.configs.rust_tools"),
     -- require("plugins.configs.lsp_saga"),
+    -- Themes
     require("plugins.themes.gruvbox"),
-    -- require("plugins.themes.darkvoid"),
+    require("plugins.themes.darkvoid"),
     require("plugins.themes.nordic"),
     require("plugins.themes.everforest")
 })
