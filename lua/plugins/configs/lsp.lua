@@ -12,7 +12,7 @@ return {
         require("mason").setup()
 
         require("mason-lspconfig").setup({
-            ensure_installed = { "lua_ls", "ts_ls", "rust_analyzer", "svelte", "html", "cssls", "tailwindcss" },
+            ensure_installed = { "pyright", "lua_ls", "ts_ls", "rust_analyzer", "svelte", "html", "cssls", "tailwindcss" },
             automatic_installation = true,
         })
 
@@ -24,6 +24,7 @@ return {
             require('cmp_nvim_lsp').default_capabilities()
         )
 
+        lspconfig.pyright.setup({})
         lspconfig.ts_ls.setup({})
         lspconfig.cssls.setup({})
         lspconfig.html.setup({})
@@ -45,7 +46,7 @@ return {
             },
         })
         lspconfig.tailwindcss.setup({
-            filetypes = { "html", "css", "javascriptreact", "typescriptreact", "svelte" },
+            filetypes = { "html", "css", "javascriptreact", "typescriptreact", "svelte", "python" },
         })
 
         require("fidget").setup({})
@@ -83,9 +84,9 @@ return {
                         buffer = ev.buf,
                         callback = function()
                             local filetype = vim.bo[ev.buf].filetype
-                            if filetype == "html" then
-                                return
-                            end
+                            -- if filetype == "html" then
+                            --     return
+                            -- end
                             -- If it have <pre>/<code>, format code
                             vim.lsp.buf.format({ async = false })
                         end,
