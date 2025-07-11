@@ -12,7 +12,7 @@ return {
         require("mason").setup()
 
         require("mason-lspconfig").setup({
-            ensure_installed = { "pyright", "lua_ls", "ts_ls", "rust_analyzer", "svelte", "html", "cssls", "tailwindcss" },
+            ensure_installed = { "pyright", "denols", "lua_ls", "ts_ls", "rust_analyzer", "svelte", "html", "cssls", "tailwindcss" },
             automatic_installation = true,
         })
 
@@ -24,11 +24,19 @@ return {
             require('cmp_nvim_lsp').default_capabilities()
         )
 
-        lspconfig.pyright.setup({})
-        lspconfig.ts_ls.setup({})
+        lspconfig.denols.setup({
+            on_attach = on_attach,
+            root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
+        })
+        lspconfig.ts_ls.setup({
+            on_attach = on_attach,
+            root_dir = lspconfig.util.root_pattern("package.json"),
+            single_file_support = false
+        })
         lspconfig.cssls.setup({})
         lspconfig.html.setup({})
         lspconfig.rust_analyzer.setup({})
+        lspconfig.pyright.setup({})
         lspconfig.svelte.setup({})
         lspconfig.lua_ls.setup({
             settings = {
@@ -46,7 +54,14 @@ return {
             },
         })
         lspconfig.tailwindcss.setup({
-            filetypes = { "html", "css", "javascriptreact", "typescriptreact", "svelte", "python" },
+            filetypes = {
+                "html",
+                "css",
+                "javascriptreact",
+                "typescriptreact",
+                "svelte",
+                "python"
+            },
         })
 
         require("fidget").setup({})

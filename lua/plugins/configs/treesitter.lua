@@ -13,6 +13,7 @@ return {
                 "lua",
                 "html",
                 "css",
+                "tsx",
                 "javascript",
                 "typescript",
                 "svelte",
