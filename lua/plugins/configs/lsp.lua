@@ -17,17 +17,16 @@ return {
         })
 
         local lspconfig = require('lspconfig')
-        local lsp_defaults = lspconfig.util.default_config
-        lsp_defaults.capabilities = vim.tbl_deep_extend(
-            'force',
-            lsp_defaults.capabilities,
-            require('cmp_nvim_lsp').default_capabilities()
-        )
+        local capabilities = require("cmp_nvim_lsp").default_capabilities()
+        -- local lsp_defaults = lspconfig.util.default_config
+        -- lsp_defaults.capabilities = vim.tbl_deep_extend(
+        --     'force',
+        --     lsp_defaults.capabilities,
+        --     require('cmp_nvim_lsp').default_capabilities()
+        -- )
 
         lspconfig.ts_ls.setup({
-            on_attach = on_attach,
-            root_dir = lspconfig.util.root_pattern("package.json"),
-            single_file_support = false
+            capabilities = capabilities,
         })
         lspconfig.cssls.setup({})
         lspconfig.html.setup({})
