@@ -36,11 +36,14 @@ require("lazy").setup({
     require("plugins.themes.gruvbox"),
     require("plugins.themes.darkvoid"),
     require("plugins.themes.nordic"),
-    require("plugins.themes.everforest")
+    require("plugins.themes.everforest"),
+    require("plugins.themes.andromeda"),
+    require("plugins.themes.cyberdream"),
+    require("plugins.themes.rosepine")
 })
 
 -- default theme
-vim.cmd.colorscheme "everforest"
+vim.cmd.colorscheme "cyberdream"
 -- vim.opt.background = "dark"
 -- vim.cmd("highlight Normal guibg=none")
 -- vim.cmd("highlight NormalNC guibg=none")
