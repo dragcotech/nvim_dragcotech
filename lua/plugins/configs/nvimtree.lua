@@ -20,6 +20,7 @@ return {
             },
             filters = {
                 dotfiles = false,
+                custom = {},
             },
         })
     end

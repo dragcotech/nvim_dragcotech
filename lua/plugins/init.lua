@@ -43,7 +43,8 @@ require("lazy").setup({
 })
 
 -- default theme
-vim.cmd.colorscheme "cyberdream"
+vim.cmd.colorscheme "andromeda"
 -- vim.opt.background = "dark"
 -- vim.cmd("highlight Normal guibg=none")
 -- vim.cmd("highlight NormalNC guibg=none")
+
