@@ -39,12 +39,12 @@ require("lazy").setup({
     require("plugins.themes.everforest"),
     require("plugins.themes.andromeda"),
     require("plugins.themes.cyberdream"),
-    require("plugins.themes.rosepine")
+    require("plugins.themes.rosepine"),
+    require("plugins.themes.onedark")
 })
 
 -- default theme
-vim.cmd.colorscheme "andromeda"
+vim.cmd.colorscheme "onedark"
 -- vim.opt.background = "dark"
 -- vim.cmd("highlight Normal guibg=none")
 -- vim.cmd("highlight NormalNC guibg=none")
-

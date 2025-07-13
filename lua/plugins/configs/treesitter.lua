@@ -13,7 +13,6 @@ return {
                 "lua",
                 "html",
                 "css",
-                "sass",
                 "scss",
                 "tsx",
                 "javascript",
