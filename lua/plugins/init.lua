@@ -40,7 +40,8 @@ require("lazy").setup({
     require("plugins.themes.andromeda"),
     require("plugins.themes.cyberdream"),
     require("plugins.themes.rosepine"),
-    require("plugins.themes.onedark")
+    require("plugins.themes.onedark"),
+    require("plugins.themes.github")
 })
 
 -- default theme
@@ -48,4 +49,3 @@ vim.cmd.colorscheme "onedark"
 -- vim.opt.background = "dark"
 -- vim.cmd("highlight Normal guibg=none")
 -- vim.cmd("highlight NormalNC guibg=none")
-vim.lsp.enable('pug')
