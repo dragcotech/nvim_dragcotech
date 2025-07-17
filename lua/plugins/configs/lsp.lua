@@ -55,7 +55,8 @@ return {
                 "javascriptreact",
                 "typescriptreact",
                 "svelte",
-                "python"
+                "python",
+                "pug"
             },
         })
 

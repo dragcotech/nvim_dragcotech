@@ -12,6 +12,7 @@ return {
             ensure_installed = {
                 "lua",
                 "html",
+                "pug",
                 "css",
                 "scss",
                 "tsx",
@@ -19,6 +20,7 @@ return {
                 "typescript",
                 "svelte",
                 "rust",
+                "python"
             },
             highlight = {
                 enable = true,

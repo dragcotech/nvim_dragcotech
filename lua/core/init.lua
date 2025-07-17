@@ -14,7 +14,7 @@ vim.opt.shiftwidth = 4
 vim.opt.shiftround = true
 vim.opt.expandtab = true
 
---Line numbers
+-- Line numbers
 vim.wo.number = true
 
 --
@@ -23,3 +23,9 @@ vim.cmd [[ set termguicolors ]]
 
 -- language setting
 vim.cmd("language en_US")
+
+-- reload file
+vim.o.autoread = true
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHoldI" }, {
+    command = "checktime",
+})
