@@ -1,4 +1,6 @@
+-- Diagnostic
 vim.keymap.set('n', '<leader>d', ':lua vim.diagnostic.setloclist()')
+vim.keymap.set('n', '<leader>da', ':set expandtab tabstop=4 shiftwidth=4')
 
 -- Navigate vim panes better
 vim.keymap.set('n', '<c-k>', ':wincmd k<CR>')

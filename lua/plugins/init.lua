@@ -16,6 +16,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+
 -- Lazy Setup
 require("lazy").setup({
     require("plugins.configs.alpha"),
@@ -30,6 +31,7 @@ require("lazy").setup({
     require("plugins.configs.treesitter"),
     require("plugins.configs.comment"),
     require("plugins.configs.multiple_search"),
+    require("plugins.configs.indent"),
     -- require("plugins.configs.rust_tools"),
     -- require("plugins.configs.lsp_saga"),
     -- Themes
@@ -41,7 +43,7 @@ require("lazy").setup({
     require("plugins.themes.cyberdream"),
     require("plugins.themes.rosepine"),
     require("plugins.themes.onedark"),
-    require("plugins.themes.github")
+    require("plugins.themes.github"),
 })
 
 -- default theme
