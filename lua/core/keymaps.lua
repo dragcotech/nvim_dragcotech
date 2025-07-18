@@ -3,10 +3,10 @@ vim.keymap.set('n', '<leader>d', ':lua vim.diagnostic.setloclist()')
 vim.keymap.set('n', '<leader>da', ':set expandtab tabstop=4 shiftwidth=4')
 
 -- Navigate vim panes better
-vim.keymap.set('n', '<c-k>', ':wincmd k<CR>')
-vim.keymap.set('n', '<c-j>', ':wincmd j<CR>')
-vim.keymap.set('n', '<c-h>', ':wincmd h<CR>')
-vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
+vim.keymap.set('n', '<M-k>', ':wincmd k<CR>')
+vim.keymap.set('n', '<M-j>', ':wincmd j<CR>')
+vim.keymap.set('n', '<M-h>', ':wincmd h<CR>')
+vim.keymap.set('n', '<M-l>', ':wincmd l<CR>')
 
 -- copy, pass from clipboard
 vim.keymap.set('n', '<leader>p', '"+p', { noremap = true, silent = true })

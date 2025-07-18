@@ -19,7 +19,7 @@ return {
                     return 20 -- Default size
                 end
             end,
-            open_mapping = [[<c-t>]],
+            open_mapping = [[<M-t>]],
             on_create = function(t) end,
             on_open = function(t) end,
             on_close = function(t) end,
