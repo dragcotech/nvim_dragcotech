@@ -55,7 +55,8 @@ return {
             close_on_exit = true,     -- close the terminal window when the process exits
             clear_env = false,        -- use only environmental variables from `env`, passed to jobstart()
             -- Change the default shell. Can be a string or a function returning a string
-            shell = "pwsh",
+            shell = "zsh",
+            -- shell = "pwsh",
             auto_scroll = true, -- automatically scroll to the bottom on terminal output
             float_opts = {
                 -- The border key is *almost* the same as 'nvim_open_win'

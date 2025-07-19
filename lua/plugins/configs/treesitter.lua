@@ -6,6 +6,7 @@ return {
         -- If It run on windows, set clang compiler
         if vim.loop.os_uname().sysname == "Windows_NT" then
             require('nvim-treesitter.install').compilers = { "clang" }
+            -- require('nvim-treesitter.install').prefer_git = true
         end
 
         require('nvim-treesitter.configs').setup({

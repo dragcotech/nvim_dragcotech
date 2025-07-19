@@ -22,7 +22,8 @@ vim.cmd [[ set noswapfile ]]
 vim.cmd [[ set termguicolors ]]
 
 -- language setting
-vim.cmd("language en_US")
+-- vim.cmd("language en_US")
+vim.cmd("language en_US.utf-8")
 
 -- reload file
 vim.o.autoread = true
