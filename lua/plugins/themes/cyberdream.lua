@@ -5,7 +5,7 @@ return {
         priority = 1000, -- Load before other plugins
         config = function()
             require("cyberdream").setup({
-                -- transparent = true,
+                transparent = true,
             })
         end
     },
