@@ -44,10 +44,12 @@ require("lazy").setup({
     require("plugins.themes.rosepine"),
     require("plugins.themes.onedark"),
     require("plugins.themes.github"),
+    require("plugins.themes.everviolet"),
+    require("plugins.themes.neofusion")
 })
 
 -- default theme
-vim.cmd.colorscheme "cyberdream"
+vim.cmd.colorscheme "neofusion"
 -- vim.opt.background = "dark"
 -- vim.cmd("highlight Normal guibg=none")
 -- vim.cmd("highlight NormalNC guibg=none")
