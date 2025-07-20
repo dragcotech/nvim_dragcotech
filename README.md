@@ -56,3 +56,14 @@
 | ----------- | ----------- |
 | space + ca    | show choose     |
 | \ca or ,ca    | show choose     |
+
+## Comment
+| Keyboard | Description |
+|----------|-------------|
+| gc       | line        |
+| gcc      | toggle line |
+| gb       | block       |
+| gbc      | toggle block |
+| gc0      | above       |
+| gco      | below       |
+| gcA      | end         |
