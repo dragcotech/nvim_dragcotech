@@ -49,7 +49,7 @@ require("lazy").setup({
 })
 
 -- default theme
-vim.cmd.colorscheme "neofusion"
+vim.cmd.colorscheme "onedark"
 -- vim.opt.background = "dark"
 -- vim.cmd("highlight Normal guibg=none")
 -- vim.cmd("highlight NormalNC guibg=none")
