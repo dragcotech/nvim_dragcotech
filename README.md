@@ -11,6 +11,7 @@
 - :lua vim.diagnostic.setloclist() #check all diagnostic in project
 - :set expandtab tabstop=4 shiftwidth=4 #set prettier
 - :noh :nohlsearch
+- :5,10> -- gg=G
 
 # Keyboard Shortcuts
 

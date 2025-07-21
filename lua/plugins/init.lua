@@ -32,6 +32,7 @@ require("lazy").setup({
     require("plugins.configs.comment"),
     require("plugins.configs.multiple_search"),
     require("plugins.configs.indent"),
+    require("plugins.configs.escape"),
     -- require("plugins.configs.rust_tools"),
     -- require("plugins.configs.lsp_saga"),
     -- Themes
