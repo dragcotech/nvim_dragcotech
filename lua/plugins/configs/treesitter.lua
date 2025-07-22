@@ -21,7 +21,8 @@ return {
                 "typescript",
                 "svelte",
                 "rust",
-                "python"
+                "python",
+                "java",
             },
             highlight = {
                 enable = true,

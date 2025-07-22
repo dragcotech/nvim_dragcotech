@@ -12,7 +12,7 @@ return {
         require("mason").setup()
 
         require("mason-lspconfig").setup({
-            ensure_installed = { "pyright", "lua_ls", "ts_ls", "rust_analyzer", "svelte", "html", "cssls", "tailwindcss" },
+            ensure_installed = { "pyright", "lua_ls", "ts_ls", "rust_analyzer", "svelte", "html", "cssls", "tailwindcss", "jdtls" },
             automatic_installation = true,
         })
 
@@ -25,14 +25,19 @@ return {
         --     require('cmp_nvim_lsp').default_capabilities()
         -- )
 
+        lspconfig.jdtls.setup({
+            capabilities = capabilities,
+        })
         lspconfig.ts_ls.setup({
             capabilities = capabilities,
         })
-        lspconfig.cssls.setup({})
-        lspconfig.html.setup({})
-        lspconfig.rust_analyzer.setup({})
-        lspconfig.pyright.setup({})
-        lspconfig.svelte.setup({})
+        lspconfig.cssls.setup({
+            capabilities = capabilities,
+        })
+        lspconfig.html.setup({ capabilities = capabilities, })
+        lspconfig.rust_analyzer.setup({ capabilities = capabilities, })
+        lspconfig.pyright.setup({ capabilities = capabilities, })
+        lspconfig.svelte.setup({ capabilities = capabilities, })
         lspconfig.lua_ls.setup({
             settings = {
                 Lua = {
@@ -47,6 +52,7 @@ return {
                     },
                 },
             },
+            capabilities = capabilities,
         })
         lspconfig.tailwindcss.setup({
             filetypes = {
@@ -58,6 +64,7 @@ return {
                 "python",
                 "pug"
             },
+            capabilities = capabilities,
         })
 
         require("fidget").setup({})
