@@ -30,8 +30,6 @@ return {
             shade_filetypes = {},
             autochdir = false,
             highlights = {
-                -- highlights which map to a highlight group name and a table of it's values
-                -- NOTE: this is only a subset of values, any group placed here will be set for the terminal window split
                 Normal = {
                     guibg = "#1e1e2e",
                 },
@@ -43,21 +41,10 @@ return {
                     guibg = "#1e1e2e",
                 },
             },
-            shade_terminals = true,   -- NOTE: this option takes priority over highlights specified so if you specify Normal highlights you should set this to false
-            shading_factor = -30,     -- the percentage by which to lighten dark terminal background, default: -30
-            shading_ratio = -3,       -- the ratio of shading factor for light/dark terminal background, default: -3
-            start_in_insert = true,
-            insert_mappings = true,   -- whether or not the open mapping applies in insert mode
-            terminal_mappings = true, -- whether or not the open mapping applies in the opened terminals
-            persist_size = true,
-            persist_mode = true,      -- if set to true (default) the previous terminal mode will be remembered
+            shading_factor = -30, -- the percentage by which to lighten dark terminal background, default: -30
+            shading_ratio = -3,   -- the ratio of shading factor for light/dark terminal background, default: -3
             direction = 'horizontal',
-            close_on_exit = true,     -- close the terminal window when the process exits
-            clear_env = false,        -- use only environmental variables from `env`, passed to jobstart()
-            -- Change the default shell. Can be a string or a function returning a string
-            shell = "zsh",
-            -- shell = "pwsh",
-            auto_scroll = true, -- automatically scroll to the bottom on terminal output
+            shell = "pwsh",
             float_opts = {
                 -- The border key is *almost* the same as 'nvim_open_win'
                 -- see :h nvim_open_win for details on borders however
@@ -73,18 +60,6 @@ return {
                 zindex = 10,
                 title_pos = 'center',
             },
-            winbar = {
-                enabled = false,
-                name_formatter = function(term) --  term: Terminal
-                    return term.name
-                end
-            },
-            responsiveness = {
-                -- breakpoint in terms of `vim.o.columns` at which terminals will start to stack on top of each other
-                -- instead of next to each other
-                -- default = 0 which means the feature is turned off
-                horizontal_breakpoint = 135,
-            }
         })
 
         function _G.set_terminal_keymaps()
